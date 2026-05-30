@@ -1,5 +1,5 @@
 use <polyround.scad>
-use <BOSL2/std.scad>
+include <BOSL2/std.scad>
 include <positions.scad>
 
 boardThickness = 1.60;

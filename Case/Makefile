@@ -28,7 +28,7 @@ include $(wildcard $(BUILDDIR)/*.deps)
 .SECONDARY: $(BUILDDIR)/$2.scad
 # define a new target for a temporary "build file" that only calls the part module
 $(BUILDDIR)/$2.scad: $1 | dir_build dir_output
-	@/bin/echo -n -e 'use <../$(1)>\npart_$(2)();' > $(BUILDDIR)/$2.scad
+	@/bin/echo -n -e 'include <../$(1)>\npart_$(2)();' > $(BUILDDIR)/$2.scad
 
 $(OUTPUTDIR)/$2.stl: $(BUILDDIR)/$2.scad
 	@echo Building $2
